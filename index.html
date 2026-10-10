@@ -2,7 +2,10 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#030712">
     <title>MuGöl Erişim | Resmi Bağlantılar</title>
     
     <!-- Google Fonts: Nunito -->
@@ -102,7 +105,7 @@
         }
 
         .container {
-            width: 100%; max-width: 440px; text-align: center; z-index: 10; position: relative;
+            width: 100%; max-width: 100%; text-align: center; z-index: 10; position: relative;
         }
 
         /* Tema Değiştirici */
@@ -326,6 +329,53 @@
         .link-btn:nth-child(6) { animation-delay: 0.60s; }
         .link-btn:nth-child(7) { animation-delay: 0.70s; }
 
+
+
+        /* ===== ÜST SATIR: YAN YANA İKİ BUTON ===== */
+        .top-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 6px; }
+        .top-row .link-btn {
+            flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 20px 10px; margin-bottom: 0; border-radius: 24px;
+        }
+        .top-row .icon-wrapper { margin: 0 0 12px 0; width: 54px; height: 54px; border-radius: 16px; }
+        .top-row .btn-text { flex: none; margin-left: 0; text-align: center; }
+        .top-row .btn-title { display: block; font-size: 17px; font-weight: 900; }
+        .top-row .btn-subtitle { display: block; font-size: 11px; font-weight: 700; margin-top: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+        .top-row .playstore-btn { animation-delay: 0.15s; }
+        .top-row .playstore-btn .btn-subtitle { text-transform: uppercase; opacity: 0.7; }
+
+        /* ===== KARE SOSYAL BUTONLAR (GRID) ===== */
+        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .social-grid .social-btn {
+            flex-direction: column; justify-content: center; align-items: center;
+            aspect-ratio: 1 / 1; padding: 10px 6px; border-radius: 24px; text-align: center;
+        }
+        .social-grid .social-btn .icon-wrapper { margin-right: 0; margin-bottom: 10px; width: 54px; height: 54px; border-radius: 16px; font-size: 26px; }
+        .social-grid .social-btn .btn-text { flex: none; text-align: center; font-size: 14px; font-weight: 800; }
+        .social-grid .social-btn .fa-chevron-right { display: none; }
+        .social-grid .social-btn:hover { letter-spacing: 0; }
+        .social-grid .social-btn:nth-child(1) { animation-delay: 0.30s; }
+        .social-grid .social-btn:nth-child(2) { animation-delay: 0.38s; }
+        .social-grid .social-btn:nth-child(3) { animation-delay: 0.46s; }
+        .social-grid .social-btn:nth-child(4) { animation-delay: 0.54s; }
+        .social-grid .social-btn:nth-child(5) { animation-delay: 0.62s; }
+        .social-grid .social-btn:nth-child(6) { animation-delay: 0.70s; }
+        .social-grid .nsosyal .icon-wrapper i { font-size: 28px; }
+
+        /* ===== GOOGLE PLAY BUTONU ===== */
+        .playstore-btn { padding: 14px 22px; margin-bottom: 6px; animation-delay: 0.2s; --hover-color: #01875f; --hover-bg-light: rgba(1,135,95,0.4); }
+        .playstore-btn .icon-wrapper {
+            width: 48px; height: 48px; border-radius: 14px; display: flex; justify-content: center; align-items: center;
+            margin-right: 20px; font-size: 22px; background: rgba(1,135,95,0.18); transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .playstore-btn .icon-wrapper i { color: #01c27e; }
+        .playstore-btn .btn-subtitle { display: block; font-size: 12px; font-weight: 600; opacity: 0.7; margin-top: 2px; }
+        .playstore-btn:hover { transform: translateY(-6px) scale(1.03); border-color: #01c27e; box-shadow: 0 20px 45px var(--shadow-color), 0 0 20px rgba(1,135,95,0.4); }
+        .playstore-btn:hover .icon-wrapper { background: #01875f; transform: scale(1.15) rotate(10deg); }
+        .playstore-btn:hover .icon-wrapper i { color: #fff; }
+        .playstore-btn:hover .fa-chevron-right { opacity: 1; transform: translateX(8px); }
+
+
         /* Paylaş Butonu */
         .share-btn {
             margin-top: 40px; background: rgba(255,255,255,0.03); border: 1px dashed rgba(255,255,255,0.25);
@@ -433,17 +483,28 @@
 
         <div class="links-container">
             
-            <!-- PORTAL ANA SİTE BUTONU (VIP Tasarım + Akıllı Uygulama Portalı) -->
-            <a href="https://mugol-portal.github.io" target="_blank" class="link-btn main-portal-btn">
-                <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
-                <div class="btn-text">
-                    <span class="btn-title">MuGöl PORTAL</span>
-                    <span class="btn-subtitle">Akıllı Uygulama Portalı</span>
-                </div>
-                <i class="fas fa-chevron-right"></i>
-            </a>
+            <!-- ÜST SATIR: SİTEYE GİRİŞ + GOOGLE PLAY (yan yana) -->
+            <div class="top-row">
+                <a href="https://mugol-portal.github.io" target="_blank" class="link-btn main-portal-btn">
+                    <div class="icon-wrapper"><i class="fas fa-globe"></i></div>
+                    <div class="btn-text">
+                        <span class="btn-title">Siteye Giriş</span>
+                        <span class="btn-subtitle">MuGöl Portal</span>
+                    </div>
+                </a>
 
-            <!-- YENİLENMİŞ SOSYAL MEDYA LİNKLERİ (social-btn Sınıfı Eklendi) -->
+                <a href="https://play.google.com/store/apps/details?id=com.mugol.portal2" target="_blank" rel="noopener" class="link-btn playstore-btn">
+                    <div class="icon-wrapper"><i class="fab fa-google-play"></i></div>
+                    <div class="btn-text">
+                        <span class="btn-title">Google Play</span>
+                        <span class="btn-subtitle">Uygulamayı İndir</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- KARE SOSYAL MEDYA BUTONLARI -->
+            <div class="social-grid">
+
             <a href="https://www.instagram.com/mugol_portal?igsh=MXFqNWFmbnE1aGZsaw==" target="_blank" class="link-btn social-btn instagram">
                 <div class="icon-wrapper"><i class="fab fa-instagram"></i></div>
                 <span class="btn-text">Instagram</span>
@@ -479,6 +540,7 @@
                 <span class="btn-text">NSosyal</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
+            </div>
 
         </div>
 
